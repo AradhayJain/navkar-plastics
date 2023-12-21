@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #page1 {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #swiper #text {
+            height: 30vh;
+            width: 100%;
+            position: absolute;
+
+            z-index: 9;
+            background-color: rgba(0, 0, 0, 0.377);
+        }
+
+        #swiper #text span {
+            margin-left: 67px;
+            position: fixed;
+            padding-top: 45;
+            font-size: 2rem;
+            font-weight: 200;
+        }
+
+        #swiper img {
+            height: 30vh;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            background-attachment: fixed;
+        }
+
+        nav {
+            position: sticky;
+            z-index: 99;
+            height: 60px;
+            width: 100%;
+            background-color: aliceblue;
+            color: black;
+            display: flex;
+            justify-content: space-around;
+            padding: 2vw 2vw;
+
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 50vw;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.726);
+            display: none;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .duo{
+            display: none;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        nav ul li {
+            margin-left: 10px;
+            list-style: none;
+
+        }
+
+        nav ul li a {
+            position: relative;
+            text-decoration: none;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+            height: 2px;
+            bottom: 0;
+            background-color: #FF5F38;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 250ms ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        #text span {
+            position: fixed;
+        }
+
+        nav img {
+            height: 100%;
+            width: 525px;
+        }
+
+        #left {
+            margin-left: 30px;
+            height: 100%;
+            width: 40%;
+            line-height: 2;
+        }
+
+        #left h4 {
+
+            font-size: 1rem;
+            padding-top: 15px;
+            color: red;
+
+        }
+
+        #left h1 {
+            margin-bottom: -12px;
+
+        }
+
+        #left h3 {
+            font-weight: 100;
+        }
+
+        #data {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #photo img {
+            box-shadow: 2px black;
+            height: 100%;
+            width: 40%;
+        }
+
+        @media screen and (max-width:600px) {
+            #data {
+                display: block;
+            }
+
+            #left {
+                width: 90%;
+            }
+
+            #photo {
+                margin-left: 50px;
+            }
+
+            .hidebar {
+                display: none;
+            }
+
+            .sidebar {
+             
+                width: 50vw;
+            }
+
+            .new {
+                width: 250px;
+            }
+
+            nav {
+                justify-content: space-evenly;
+            }
+            .duo{
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="page1">
+
+            <nav>
+                <img class="new" src="photos/1.png">
+                <ul class="sidebar">
+                    <l1 onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24"
+                                viewBox="0 -960 960 960" width="27">
+                                <path
+                                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg></a></l1>
+                    <li><a href="index.html"> Home</a></li>
+                    <li><a href="products.html"> Products</a></li>
+                    <li><a href="about.html"> About</a></li>
+                    <li><a href="contact.html"> Contact</a></li>
+                </ul>
+                <ul>
+                    <li class="hidebar"><a href="index.html"> Home</a></li>
+                    <li class="hidebar"><a href="products.html"> Products</a></li>
+                    <li class="hidebar"><a href="about.html"> About</a></li>
+                    <li class="hidebar"><a href="contact.html"> Contact</a></li>
+                    <li class="duo" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                                height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                            </svg></a></li>
+                </ul>
+            </nav>
+            <div id="swiper">
+                <div id="text"><span>About Us</span></div>
+                <img src="photos/banner3.png">
+            </div>
+            <div id="data">
+                <div id="left">
+                    <h4>About Us.</h4>
+                    <h1>Welcome To Navkar Plastic</h1>
+                    <h3>Navkar Plastics is established in year 1999.We are a leading supplier in pp plactics and all
+                        kinds of plastics raw material</h3>
+
+                </div>
+                <div id="photo">
+                    <img src="photos/4.png">
+                    <img src="photos/5.png">
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+        integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"
+        integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+
+        const locoScroll = new LocomotiveScroll({
+            el: document.querySelector("#main"),
+            smooth: true
+        });
+        // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+        locoScroll.on("scroll", ScrollTrigger.update);
+
+        // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
+        ScrollTrigger.scrollerProxy("#main", {
+            scrollTop(value) {
+                return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+            }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+            getBoundingClientRect() {
+                return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+            },
+            // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+            pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+        });
+
+        // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+        ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+        // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+        ScrollTrigger.refresh();
+
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
+</body>
+
+</html>
